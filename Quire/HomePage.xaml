@@ -1,0 +1,170 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Quire.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Panorama control-->
+        <phone:Panorama x:Name="panoramaSelector" Title="Quire" Foreground="White" FontSize="20" SelectionChanged="Panorama_SelectionChanged" Grid.ColumnSpan="3">
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/Assets/light_gradient_desktop_1920x1200_wallpaper-318286.jpg"/>
+            </phone:Panorama.Background>
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="personal">
+                <!--Single line list with text wrarsonalpping-->
+                <phone:LongListSelector 
+                    Name="personalList" 
+                    Margin="0,0,-22,0" 
+                    SelectionChanged="personalList_SelectionChanged"
+                    >
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="20,-6,15,12">
+                                    <TextBlock Text="{Binding Header}" 
+                                           Name="headerText"
+                                           TextWrapping="Wrap" 
+                                           FontFamily="Segoe WP Light"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           FontSize="{StaticResource PhoneFontSizeExtraLarge}"
+                                           />
+                                    <TextBlock Text="{Binding Time}"
+                                           Name="timeText"
+                                           HorizontalAlignment="Right"
+                                           Opacity="0.70"
+                                           TextWrapping="Wrap" 
+                                           FontSize="22"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           />
+                               
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PanoramaItem>
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="office">
+                <phone:LongListSelector Name="officeList" Margin="0,0,-22,0" SelectionChanged="officeList_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="20,-6,15,12">
+                                <TextBlock Text="{Binding Header}" 
+                                           Name="headerText"
+                                           TextWrapping="Wrap" 
+                                           FontFamily="Segoe WP Light"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           FontSize="{StaticResource PhoneFontSizeExtraLarge}"
+                                           />
+                                <TextBlock Text="{Binding Time}"
+                                           Name="timeText"
+                                           HorizontalAlignment="Right"
+                                           Opacity="0.70"
+                                           TextWrapping="Wrap" 
+                                           FontSize="22"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PanoramaItem>
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="indoor">
+                <!--Single line list with text wrarsonalpping-->
+                <phone:LongListSelector Name="indoorList" Margin="0,0,-22,0" SelectionChanged="indoorList_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="20,-6,15,12">
+                                <TextBlock Text="{Binding Header}" 
+                                           Name="headerText"
+                                           TextWrapping="Wrap" 
+                                           FontFamily="Segoe WP Light"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           FontSize="{StaticResource PhoneFontSizeExtraLarge}"
+                                           />
+                                <TextBlock Text="{Binding Time}"
+                                           Name="timeText"
+                                           HorizontalAlignment="Right"
+                                           Opacity="0.70"
+                                           TextWrapping="Wrap" 
+                                           FontSize="22"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PanoramaItem>
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="outdoor">
+                <!--Single line list with text wrarsonalpping-->
+                <phone:LongListSelector Name="outdoorList" Margin="0,0,-22,0" SelectionChanged="outdoorList_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="20,-6,15,12">
+                                <TextBlock Text="{Binding Header}" 
+                                           Name="headerText"
+                                           TextWrapping="Wrap" 
+                                           FontFamily="Segoe WP Light"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           FontSize="{StaticResource PhoneFontSizeExtraLarge}"
+                                           />
+                                <TextBlock Text="{Binding Time}"
+                                           Name="timeText"
+                                           HorizontalAlignment="Right"
+                                           Opacity="0.70"
+                                           TextWrapping="Wrap" 
+                                           FontSize="22"
+                                           Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                           />
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+
+        <shell:SystemTray.ProgressIndicator>
+            <shell:ProgressIndicator IsIndeterminate="True" Text="please wait..." />
+        </shell:SystemTray.ProgressIndicator>
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar BackgroundColor="MidnightBlue">
+            <shell:ApplicationBarIconButton Text="add quire" IconUri="/Icons/new.png" Click="ApplicationBarIconButton_Click_1"></shell:ApplicationBarIconButton>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Logout" Click="ApplicationBarMenuItem_Click_1"></shell:ApplicationBarMenuItem>
+
+            </shell:ApplicationBar.MenuItems>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
